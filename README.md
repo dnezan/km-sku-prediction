@@ -1,6 +1,6 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qIl619KUAgBG2nD1lZzUwwVBwgqiyfDV?usp=sharing)
 
-# SKU Inventory Prediction using Prophet
+# SKU Sales Prediction using Prophet
 Predict the demand for an SKU being sold on an ecommerce website based on history of sales as well as other external factors such as weather and holidays. 
 
 ## Preqrequisites
