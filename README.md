@@ -14,15 +14,17 @@ Predict the daily and monthly demand for SKUs being sold by a vendor based on hi
 
 ## Dataset
 The data was collected by the vendor's sales data over different periods of time. For testing purposes, the datasets used for testing were
-- 3786 unique items being sold daily over a period of 01.01.2021 - 25.11.2021
-- 3 random items sold daily over 5 years
-- 15 most sold items being sold monthly over 3 years
+- 3786 unique items being sold daily over a period of 01.01.2021 - 25.11.2021 (11 months)
+- 3 top selling items sold daily over a period of 2016-05-08 - 2021-12-06 (67 months)
+- 15 top selling items being sold monthly over 3 years 
 
 It is assumed that the csv data is exported in the format of 
 ```
 item_id | timestamp (yy-mm-dd) | demand
 ```
 To run the notebook in Collab, make sure your dataset is saved with the right name in your Google Drive. Instructions are included in the notebooks to integrate your Google Drive with Collab.
+
+*Unfortunately access to the datasets used cannot be provided under license.*
 
 ## Data Preprocessing
 The data is preprocessed to deal with missing dates for every SKU as well as reformatting the data in such a way that each day is stored column-wise and the sales of each SKU is row-wise, grouped by every unique SKU in the dataset. The new dataset is also populated with existing sales data as well as storing 0 sales for missing dates.
@@ -58,7 +60,7 @@ For modeling, we use Prophet by Facebook, a time series model for forecasting. W
 We train data on 1900 days and predict on 30 days.
 
 ## Evaluating
-we found that
+we found a spike because of promotions
 
 
 
