@@ -12,6 +12,8 @@ Predict the daily, weekly, and monthly demand for SKUs being sold by a vendor ba
 - Matplotlib
 - pywt
 
+Run KM_forecast_main.ipynb
+
 ## Dataset
 The data was collected by the vendor's sales data over different periods of time. For testing purposes, the datasets used for testing were
 - 3786 unique items being sold daily over a period of 01.01.2021 - 25.11.2021 (11 months)
@@ -34,7 +36,6 @@ SKU            | start_date | ... | end_date
 --------------------------------------------
 (name of SKU1) | (demand)   | ... | (demand)
 (name of SKU2) | (demand)   | ... | (demand)
-
 ```
 ## Visualising
 We can visualise the initial dataset as well as denoised dataset using matplotlib/Plotly.
@@ -62,7 +63,6 @@ ds        |   y
 -----------------------
 date1     | (demand)   
 date2     | (demand)   
-
 ```
 
 ## Predicting
