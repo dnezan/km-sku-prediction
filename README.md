@@ -1,7 +1,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qIl619KUAgBG2nD1lZzUwwVBwgqiyfDV?usp=sharing)
 
 # SKU Sales Prediction using Prophet
-Predict the daily and monthly demand for SKUs being sold by a vendor based on history of sales as well as other external factors such as weather and holidays. 
+Predict the daily, weekly, and monthly demand for SKUs being sold by a vendor based on history of daily sales as well as other external features such as weather, holidays, and promotional data. 
 
 ## Preqrequisites
 - Python 
@@ -15,8 +15,9 @@ Predict the daily and monthly demand for SKUs being sold by a vendor based on hi
 ## Dataset
 The data was collected by the vendor's sales data over different periods of time. For testing purposes, the datasets used for testing were
 - 3786 unique items being sold daily over a period of 01.01.2021 - 25.11.2021 (11 months)
-- 3 top selling items sold daily over a period of 2016-05-08 - 2021-12-06 (67 months)
 - 15 top selling items being sold monthly over 3 years 
+- 3 top selling items sold daily over a period of 2016-05-08 - 2021-12-06 (67 months)
+The last dataset is utilised for the final implementation of the pipeline.
 
 It is assumed that the csv data is exported in the format of 
 ```
@@ -55,6 +56,14 @@ Denoised Daily Data :
 
 ## Modeling
 For modeling, we use Prophet by Facebook, a time series model for forecasting. We include US holiday features as additional regressors.
+Prophet requires data to be in the format of 
+```
+ds        |   y    
+-----------------------
+date1     | (demand)   
+date2     | (demand)   
+
+```
 
 ## Predicting
 We train data on 1900 days and predict on 30 days.
