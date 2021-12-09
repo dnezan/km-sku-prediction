@@ -55,7 +55,7 @@ We apply denoising with Direct Wavelet Transform on the data. Since our data con
 
 Denoised Daily Data :
 
-![denoise_daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-5.png)
+![denoise_daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-16.png)
 
 ## Modeling
 For modeling, we use Prophet by Facebook, a time series model for forecasting. We include US holiday features as additional regressors.
