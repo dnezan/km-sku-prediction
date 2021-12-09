@@ -40,8 +40,10 @@ SKU            | start_date | ... | end_date
 ## Visualising
 We can visualise the initial dataset as well as denoised dataset using Plotly.
 
-Daily Data :
 The Colab code contains snippets to visualise all 3 SKUs from our dataset but for the purpose of documentation, let us use a single SKU as reference. 
+
+Daily Data :
+
 ![daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-14.png)
 
 In order to better visualize the change in trends as well as predict sales over different periods of time, we can bin the daily data into weekly and monthly data.
