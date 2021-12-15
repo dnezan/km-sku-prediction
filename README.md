@@ -1,7 +1,8 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qIl619KUAgBG2nD1lZzUwwVBwgqiyfDV?usp=sharing)
 
 # SKU Sales Prediction using Prophet
-Predict the daily, weekly, and monthly demand for SKUs being sold by a vendor based on history of daily sales as well as other external features such as weather, holidays, and promotional data. 
+## How to use Prophet for time series sales forecasting using historical data, seasonality features and other regressors 
+These are my notebooks I used while designing a pipeline for our commercial web app used to predict the daily, weekly, and monthly demand for SKUs being sold by a vendor based on history of daily sales as well as other external features such as weather, holidays, and promotional data. 
 
 ## Preqrequisites
 - Python 
@@ -58,7 +59,7 @@ Denoised Daily Data :
 ![denoise_daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-16.png)
 
 ## Modeling
-For modeling, we use Prophet by Facebook, a time series model for forecasting. We include US holiday features as additional regressors.
+For modeling, we use Prophet by Facebook, a time series model for forecasting. We include US holiday features as additional regressors.  
 Prophet requires data to be in the format of 
 ```
 ds        |   y    
@@ -66,9 +67,13 @@ ds        |   y
 date1     | (demand)   
 date2     | (demand)   
 ```
+For the purpose of testing the effect of specific days on sales, we will use daily sales data to train the model. We then take the sum of all the predicted days of the month and compare this against the month bin of our training data. This way, we eliminate a lot of the noise of the high frequency data and provide the user with a monthly sales forecast with an upper and lower bound.
 
 ## Predicting
-We train data on 1900 days and predict on 30 days.
+There are two ways to approach this problem. We will first train the model on the first 900 days of sales. Now we can either predict the next 2039-900 days all at once or we can predict for iterative months while updating the trained model every month. The first approach has the problem of not being able to accurately account for spikes in sales caused by features we do not have control over. For example, a pandemic like COVID-19 or even aggressive sales marketing will impact the sales without us being able to account for it. Therefore, we try the second approach of training for 0 to x months, testing for x+1 month, updating till x+1 month, training for x+2 month, and so on.
+
+![simulation](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/results_4.gif)
+Simulating a user adding new daily data and the model being refitted every month
 
 ## Evaluating
 we found a spike because of promotions
