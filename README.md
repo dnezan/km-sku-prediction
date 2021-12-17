@@ -5,15 +5,17 @@
 These are my notebooks I used while designing a pipeline for our commercial web app used to predict the daily, weekly, and monthly demand for SKUs being sold by a vendor based on history of daily sales as well as other external features such as weather, holidays, and promotional data. 
 
 ## Preqrequisites
-- Python 
-- Pandas
-- Numpy
-- Prophet by Facebook
-- Plotly
-- Matplotlib
-- pywt
+- Python                        3.6.9
+- pandas                        1.1.5
+- numpy                         1.19.5
+- prophet                       1.0.1
+- plotly                        4.4.1
+- matplotlib                    3.2.2
+- pystan                        2.19.1.1
+- scikit-learn                  1.0.1 (optional)
+- scipy                         1.4.1 (optional)
 
-Run KM_forecast_main.ipynb
+Run KM_forecast_main_clean.ipynb
 
 ## Pipeline
 ![ml_pipeline](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/KM%20Forecast%20Pipeline-6.png)
@@ -72,6 +74,22 @@ date1     | (demand)
 date2     | (demand)   
 ```
 For the purpose of testing the effect of specific days on sales, we will use daily sales data to train the model. We then take the sum of all the predicted days of the month and compare this against the month bin of our training data. This way, we eliminate a lot of the noise of the high frequency data and provide the user with a monthly sales forecast with an upper and lower bound.
+We can add additional features such as regional holidays and historical promotional data. We include the following US holidays while fitting the model.
+```
+0                 New Year's Day
+1     Martin Luther King Jr. Day
+2          Washington's Birthday
+3                   Memorial Day
+4               Independence Day
+5                      Labor Day
+6                   Columbus Day
+7                   Veterans Day
+8                   Thanksgiving
+9                  Christmas Day
+10      Christmas Day (Observed)
+11     New Year's Day (Observed)
+12       Veterans Day (Observed)
+```
 
 ## Predicting
 There are two ways to approach this problem. We will first train the model on the first 900 days of sales. Now we can either predict the next 2039-900 days all at once or we can predict for iterative months while updating the trained model every month. The first approach has the problem of not being able to accurately account for spikes in sales caused by features we do not have control over. For example, a pandemic like COVID-19 or even aggressive sales marketing will impact the sales without us being able to account for it. Therefore, we try the second approach of training for 0 to x months, testing for x+1 month, updating till x+1 month, training for x+2 month, and so on.
