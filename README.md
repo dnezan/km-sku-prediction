@@ -15,6 +15,10 @@ These are my notebooks I used while designing a pipeline for our commercial web 
 
 Run KM_forecast_main.ipynb
 
+## Pipeline
+![ml_pipeline](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/KM%20Forecast%20Pipeline-6.png)
+Chart produced in Lucidchart
+
 ## Dataset
 The data was collected by the vendor's sales data over different periods of time. For testing purposes, the datasets used for testing were
 - 3786 unique items being sold daily over a period of 01.01.2021 - 25.11.2021 (11 months)
