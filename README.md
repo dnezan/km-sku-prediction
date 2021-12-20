@@ -18,7 +18,7 @@ These are my notebooks I used while designing a pipeline for our commercial web 
 Run KM_forecast_main_clean.ipynb
 
 ## Pipeline
-![ml_pipeline](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/KM%20Forecast%20Pipeline-6.png)
+![ml_pipeline](https://github.com/dnezan/km-sku-prediction/blob/main/data_images/KwickMetrics%20Forecast%20Pipeline-9.png?raw=true)
 Chart produced in Lucidchart
 
 ## Dataset
@@ -55,7 +55,7 @@ Daily Data :
 
 In order to better visualize the change in trends as well as predict sales over different periods of time, we can bin the daily data into weekly and monthly data.
 
-![monthly_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-15.png)
+![monthly_viz](https://github.com/dnezan/km-sku-prediction/blob/main/data_images/Unknown-22.png?raw=true)
 
 ## Denoising
 We apply denoising with Direct Wavelet Transform on the data. Since our data contains many 0 values, we cannot use Box-Cox or any other power transformation techniques to denoise the data.
