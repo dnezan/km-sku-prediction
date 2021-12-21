@@ -51,18 +51,18 @@ The Colab code contains snippets to visualise all 3 SKUs from our dataset but fo
 
 Daily Data :
 
-![daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-14.png)
+![daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-23.png)
 
 In order to better visualize the change in trends as well as predict sales over different periods of time, we can bin the daily data into weekly and monthly data.
 
-![monthly_viz](https://github.com/dnezan/km-sku-prediction/blob/main/data_images/Unknown-22.png?raw=true)
+![monthly_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-24.png)
 
 ## Denoising
 We apply denoising with Direct Wavelet Transform on the data. Since our data contains many 0 values, we cannot use Box-Cox or any other power transformation techniques to denoise the data.
 
 Denoised Daily Data :
 
-![denoise_daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-16.png)
+![denoise_daily_viz](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/Unknown-25.png)
 
 ## Modeling
 For modeling, we use Prophet by Facebook, a time series model for forecasting. We include US holiday features as additional regressors.  
@@ -94,7 +94,7 @@ We can add additional features such as regional holidays and historical promotio
 ## Predicting
 There are two ways to approach this problem. We will first train the model on the first 900 days of sales. Now we can either predict the next 2039-900 days all at once or we can predict for iterative months while updating the trained model every month. The first approach has the problem of not being able to accurately account for spikes in sales caused by features we do not have control over. For example, a pandemic like COVID-19 or even aggressive sales marketing will impact the sales without us being able to account for it. Therefore, we try the second approach of training for 0 to x months, testing for x+1 month, updating till x+1 month, training for x+2 month, and so on.
 
-![simulation](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/results_4.gif)
+![simulation](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/results_6.gif)
 Simulating a user adding new daily data and the model being refitted every month
 
 ## Evaluating
