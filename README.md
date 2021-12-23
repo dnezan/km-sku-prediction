@@ -1,6 +1,6 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qIl619KUAgBG2nD1lZzUwwVBwgqiyfDV?usp=sharing)
 
-# SKU Sales Prediction using Prophet
+# SKU Sales Forecast and Optimisation using Prophet
 ## How to use Prophet for time series sales forecasting using historical data, seasonality features and other regressors 
 These are my notebooks I used while designing a pipeline for our commercial web app used to predict the daily, weekly, and monthly demand for SKUs being sold by a vendor based on history of daily sales as well as other external features such as weather, holidays, and promotional data. 
 
@@ -97,8 +97,10 @@ There are two ways to approach this problem. We will first train the model on th
 ![simulation](https://raw.githubusercontent.com/dnezan/km-sku-prediction/main/data_images/results_6.gif)
 Simulating a user adding new daily data and the model being refitted every month
 
-## Evaluating
-we found a spike because of promotions
+## Tuning
+We can tune the hyperparameters using search.
 
+##Conclusion
+We have prediccted accurate monthly predictions using volatile datasets.
 
 
