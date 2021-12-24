@@ -18,7 +18,7 @@ These are my notebooks I used while designing a pipeline for our commercial web 
 Run KM_forecast_main_clean.ipynb
 
 ## Pipeline
-![ml_pipeline](https://github.com/dnezan/km-sku-prediction/blob/main/data_images/KwickMetrics%20Forecast%20Pipeline-9.png?raw=true)
+![ml_pipeline](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/KwickMetrics%20Forecast%20Pipeline-9.png?raw=true)
 Chart produced in Lucidchart
 
 ## Dataset
