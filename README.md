@@ -15,11 +15,33 @@ These are my notebooks I used while designing a pipeline for our commercial web 
 - scikit-learn                  1.0.1 (optional)
 - scipy                         1.4.1 (optional)
 
-Run KM_forecast_main_clean.ipynb
+## Project Structure 
+```
+.
+└── project/
+    ├── data
+    ├── models
+    ├── notebooks
+    └── src/
+        ├── data_preparation/
+        │   ├── preprocess.py
+        │   ├── resample.py
+        │   └── additional_regressors.py
+        ├── model_training/
+        │   └── train.py
+        └── model_serving/
+            ├── load_model.py
+            ├── predict.py
+            └── save_result.py 
+```
 
 ## Pipeline
 ![ml_pipeline](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/KwickMetrics%20Forecast%20Pipeline-9.png?raw=true)
 Chart produced in Lucidchart
+
+![process-workflow-lm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map.png?raw=true#gh-light-mode-only)
+![process-workflow-dm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map%20-%20dark%20-2.png?raw=true#gh-dark-mode-only)
+
 
 ## Dataset
 The data was collected by the vendor's sales data over different periods of time. For testing purposes, the datasets used for testing were
