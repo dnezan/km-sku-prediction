@@ -28,7 +28,8 @@ These are my notebooks I used while designing a pipeline for our commercial web 
         │   ├── resample.py
         │   └── additional_regressors.py
         ├── model_training/
-        │   └── train.py
+        │   ├── train.py
+        │   └── monthly_update.py
         └── model_serving/
             ├── load_model.py
             ├── predict.py
