@@ -37,7 +37,8 @@ These are my notebooks I used while designing a pipeline for our commercial web 
 ```
 
 ## Pipeline
-![ml_pipeline](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/KwickMetrics%20Forecast%20Pipeline-9.png?raw=true)
+![ml_pipeline-dm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Copy%20of%20KwickMetrics%20Forecast%20Pipeline.png?raw=true#gh-dark-mode-only)
+![ml_pipeline-lm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/KwickMetrics%20Forecast%20Pipeline-12.png?raw=true#gh-light-mode-only)
 Chart produced in Lucidchart
 
 ![process-workflow-lm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map.png?raw=true#gh-light-mode-only)
