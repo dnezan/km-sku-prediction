@@ -41,11 +41,12 @@ The proprietary dataset is stored on an AWS RDS database which is accessed throu
 ## Pipeline
 ![ml_pipeline-dm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Copy%20of%20KwickMetrics%20Forecast%20Pipeline.png?raw=true#gh-dark-mode-only)
 ![ml_pipeline-lm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/KwickMetrics%20Forecast%20Pipeline-12.png?raw=true#gh-light-mode-only)
+*Chart produced in Lucidchart*
 
-
+## Process Workflow
 ![process-workflow-lm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map.png?raw=true#gh-light-mode-only)
-![process-workflow-dm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map%20-%20dark%20-2.png?raw=true#gh-dark-mode-only)
-Chart produced in Lucidchart
+![process-workflow-dm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map%20-%20dark%20-4.png?raw=true#gh-dark-mode-only)
+*Chart produced in Lucidchart*
 
 ## Dataset
 The data was collected by the vendor's sales data over different periods. For testing purposes, the datasets used for testing were
