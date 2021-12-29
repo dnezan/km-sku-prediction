@@ -6,13 +6,6 @@ These are the notebooks I used while designing a pipeline for our commercial web
 
 The proprietary dataset is stored on an AWS RDS database which is accessed through an AWS Lambda function where each src file is called.
 
-##### Table of Contents  
-[Prequ](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
-<a name="Prerequisites"/>
-## Prere
-
 ## Prerequisites
 - Python                        3.6.9
 - pandas                        1.1.5
