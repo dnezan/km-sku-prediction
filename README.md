@@ -45,7 +45,7 @@ Development for this project was done using a dataset stored in Google Drive and
 *Chart produced in Lucidchart*
 
 ## Process Workflow
-![process-workflow-lm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map.png?raw=true#gh-light-mode-only)
+![process-workflow-lm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map%20-%20light%20-4.png?raw=true#gh-light-mode-only)
 ![process-workflow-dm](https://github.com/dnezan/km-sku-prediction/blob/main/data/data_images/Process%20map%20-%20dark%20-4.png?raw=true#gh-dark-mode-only)
 *Chart produced in Lucidchart*
 
