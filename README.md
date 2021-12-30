@@ -79,7 +79,7 @@ dataset_name = 'dataset.csv'
 df=pd.read_csv(dataset_name)
 ```
 
-### Importing from AWS DB using Sagemaker/Lambda Notebook Instance
+### Importing from AWS DB using AWS Sagemaker Notebook or AWS Lambda Function
 ```
 secret_user = '****'
 secret_password = '****'
