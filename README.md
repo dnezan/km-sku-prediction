@@ -4,7 +4,8 @@
 ## How to use Prophet for time series sales forecasting using historical data, seasonality features and other promotional regressors 
 These are the notebooks I used while designing a pipeline for our commercial web app to predict the daily, weekly, and monthly demand for SKUs sold by a vendor based on the history of daily sales and other external features such as weather, holidays and promotional data.
 
-The proprietary dataset is stored on an AWS RDS database which is accessed through an AWS Lambda function where each src file is called.
+The proprietary dataset is stored on an AWS RDS database which is accessed through an AWS Lambda function and trained in AWS Sagemaker where each src file is called.
+Development for this project was done using a dataset stored in Google Drive and coded in Google Colab.
 
 ## Prerequisites
 - Python                        3.6.9
@@ -64,6 +65,38 @@ To run the notebook in Collab, make sure your dataset is saved with the right na
 
 *Unfortunately access to the datasets used cannot be provided under license.*
 
+## Importing Dataset
+You can import your dataset from two sources.
+
+### Importing CSV from Google Drive using Google Colab
+```
+from google.colab import drive
+drive.mount('/content/drive')
+%cd "/content/drive/My Drive"
+!mkdir km-forecast-practice
+%cd "/content/drive/My Drive/km-forecast-practice"
+dataset_name = 'dataset.csv'
+df=pd.read_csv(dataset_name)
+```
+
+### Importing from AWS DB using AWS Sagemaker Notebook or AWS Lambda Function
+```
+secret_user = '****'
+secret_password = '****'
+secret_host = '****'
+secret_db = '****'
+
+import psycopg2 as pg
+import pandas.io.sql as psql
+import pandas as pd
+str = "host=" + secret_host + " dbname=" +  secret_db + " user=" + secret_user + " password=" + secret_password
+
+connection = pg.connect(str)
+
+df = pd.read_sql_query(****,con=connection)
+```
+You would use psycopg2 to connect to Postgres and e.g. MySQLdb to connect to MySQL. 
+
 ## Data Preprocessing
 The data is preprocessed to deal with missing dates for every SKU as well as reformatting the data in such a way that each day is stored column-wise and the sales of each SKU is row-wise, grouped by every unique SKU in the dataset. The new dataset is also populated with existing sales data as well as storing 0 sales for missing dates.
 ```
@@ -102,7 +135,7 @@ date1     | (demand)
 date2     | (demand)   
 ```
 For the purpose of testing the effect of specific days on sales, we will use daily sales data to train the model. We then take the sum of all the predicted days of the month and compare this against the month bin of our training data. This way, we eliminate a lot of the noise of the high frequency data and provide the user with a monthly sales forecast with an upper and lower bound.
-We can add additional features such as regional holidays and historical promotional data. We include the following US holidays, Amazon sales events, and historical promotions data available from SP-API while fitting the model.
+We can add additional features such as regional holidays and historical promotional data. We include the following US holidays from Prophet, Amazon sales events manually collected, and historical promotions data available from SP-API while fitting the model.
 ```
 0                 New Year's Day    |    Black Friday    |     Lightning Deal   
 1     Martin Luther King Jr. Day    |    Cyber Monday    |     Best Deal
@@ -128,10 +161,10 @@ Simulating a user adding new daily data and the model being refitted every month
 ## Tuning
 We can tune the hyperparameters using search.
 
-##Optimisations
+## Optimisations
 We can store the data in Parquet rather than CSV.
 
-##Conclusion
+## Conclusion
 We have prediccted accurate monthly predictions using volatile datasets.
 
 
