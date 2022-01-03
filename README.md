@@ -167,4 +167,5 @@ We can store the data in Parquet rather than CSV.
 ## Conclusion
 We have prediccted accurate monthly predictions using volatile datasets.
 
-
+## References
+https://aws.amazon.com/blogs/machine-learning/call-an-amazon-sagemaker-model-endpoint-using-amazon-api-gateway-and-aws-lambda/
